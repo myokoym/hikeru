@@ -18,6 +18,7 @@
 
 require "gtk2"
 require "optparse"
+require "hikeru/version"
 require "hikeru/window"
 
 module Hikeru
