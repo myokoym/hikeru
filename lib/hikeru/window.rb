@@ -22,13 +22,13 @@ require "gst"
 module Hikeru
   class Window < Gtk::Window
     KEY_BIND = {
-      Gdk::Keyval::GDK_KEY_c  => "C",
-      Gdk::Keyval::GDK_KEY_d  => "D",
-      Gdk::Keyval::GDK_KEY_e  => "E",
-      Gdk::Keyval::GDK_KEY_f  => "F",
-      Gdk::Keyval::GDK_KEY_g  => "G",
-      Gdk::Keyval::GDK_KEY_a  => "A",
-      Gdk::Keyval::GDK_KEY_b  => "B",
+      Gdk::Keyval::GDK_KEY_c => "C",
+      Gdk::Keyval::GDK_KEY_d => "D",
+      Gdk::Keyval::GDK_KEY_e => "E",
+      Gdk::Keyval::GDK_KEY_f => "F",
+      Gdk::Keyval::GDK_KEY_g => "G",
+      Gdk::Keyval::GDK_KEY_a => "A",
+      Gdk::Keyval::GDK_KEY_b => "B",
     }
 
     def initialize
