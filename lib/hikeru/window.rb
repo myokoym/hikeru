@@ -21,6 +21,16 @@ require "gst"
 
 module Hikeru
   class Window < Gtk::Window
+    KEY_BIND = {
+      Gdk::Keyval::GDK_KEY_c  => "C",
+      Gdk::Keyval::GDK_KEY_d  => "D",
+      Gdk::Keyval::GDK_KEY_e  => "E",
+      Gdk::Keyval::GDK_KEY_f  => "F",
+      Gdk::Keyval::GDK_KEY_g  => "G",
+      Gdk::Keyval::GDK_KEY_a  => "A",
+      Gdk::Keyval::GDK_KEY_b  => "B",
+    }
+
     def initialize
       super
       setup
@@ -41,20 +51,8 @@ module Hikeru
 
       signal_connect("key_press_event") do |widget, event|
         case event.keyval
-        when Gdk::Keyval::GDK_KEY_c
-          play_sound("C")
-        when Gdk::Keyval::GDK_KEY_d
-          play_sound("D")
-        when Gdk::Keyval::GDK_KEY_e
-          play_sound("E")
-        when Gdk::Keyval::GDK_KEY_f
-          play_sound("F")
-        when Gdk::Keyval::GDK_KEY_g
-          play_sound("G")
-        when Gdk::Keyval::GDK_KEY_a
-          play_sound("A")
-        when Gdk::Keyval::GDK_KEY_b
-          play_sound("B")
+        when *KEY_BIND.keys
+          play_sound(KEY_BIND[event.keyval])
         when Gdk::Keyval::GDK_KEY_q
           Gtk.main_quit
         end
